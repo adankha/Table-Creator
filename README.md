@@ -3,10 +3,10 @@
 To use the program correctly, follow the instructions below:
 
 Step 1: 
-Download t1RNG.c FROM HERE and put it in the directory you're working in.
+Download t1RNG.c and put it in the directory you're working in.
 
 Step 2:
-Download rnames.txt FROM HERE and put it in the directory you're working in.
+Download rnames.txt and put it in the directory you're working in.
 
 Step 3:
 gcc t1RNG.c
