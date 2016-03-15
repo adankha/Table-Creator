@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[]){
     
+    
     int i = 0;
     int j = 0;
     int k = 0;
@@ -14,6 +15,7 @@ int main(int argc, char *argv[]){
     char str[30];   // Holds namesread from file
     double randNumb;// Holds random number
     int storeLen = 0;   // Holds largest name length
+    int colSpaces = 0;  // Separates columns evenly
     //srand(time(NULL));
     FILE *fp;
     
@@ -52,8 +54,7 @@ you will see get the same results. So please keep that in mind when you run this
         if (colNumb > 20 || colNumb <= 0){
             printf("Col number doesn't meet the range.\n");
             return 0;
-        }
-        
+        }        
     }
     
     else{
@@ -61,31 +62,40 @@ you will see get the same results. So please keep that in mind when you run this
         return 0;
     }
     
-    
-    
+        
     /* Find the largest length from file */
     while(i != rowNumb){
+               
         fgets(str, 30, fp);
         i++;
         if (strlen(str) > storeLen)
             storeLen = strlen(str);
     }
     
-    
-    
+    colSpaces = storeLen / 2;   // Used to separate columns evenly and in line.
+        
     /* Print col names */
     for (i = 0; i < colNumb; i++){
         
         /* Print enough spaces for the largest name to place the columns correctly/ in line */
-        while (j != storeLen){
-            printf(" ");
-            j++;
-        }  
+        if (i == 0){
+            while (j != storeLen){
+                printf(" ");
+                j++;
+            }
+        }
+        else{
+            
+            while (j != colSpaces){
+                printf(" ");
+                j++;
+            }
+        }
         printf("Column%d:", i+1);
-        j = 0;  
+        j = 0;
     }
     printf("\n");
-
+    
     /*Print rows*/
     for (i = 0; i < rowNumb; i++){
         fscanf(fp, "%s", str);  // Scan name(s) from file and print
@@ -104,7 +114,7 @@ you will see get the same results. So please keep that in mind when you run this
                 }
             }
             else{                                       // If it's not the first row, then print largest string length number of spaces
-                while (k < storeLen){
+                while (k < colSpaces){
                     printf(" ");
                     k++;
                 }
@@ -114,7 +124,5 @@ you will see get the same results. So please keep that in mind when you run this
             printf("%7.2lf ", randNumb);                // Print your beautiful lined up numbers.
         }
         printf("\n");
-    }    
+    }
 }
-
-
