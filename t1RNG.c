@@ -4,20 +4,6 @@
 #include <time.h>
 
 
-char* trim_newLine (char *s){
- 
-   int i = 0;
-   char trail[30];
-   
-   while (s[i] != '\n'){
-	trail[i] = s[i];
-	i++;
-   }
-   strcpy(s, trail);
-   return s;
-} 
-
-
 int main(int argc, char *argv[]){
 
 int i;
@@ -76,8 +62,7 @@ you will see get the same results. So please keep that in mind when you run this
     }
     printf("\n");
     for (i = 0; i < rowNumb; i++){
-      fgets(str, 30, fp);
-      newStr = trim_newLine(str);
+	 fscanf(fp, "%s", str);
 	 printf("%s:", str);
       
       for (j = 0; j < colNumb; j++){
