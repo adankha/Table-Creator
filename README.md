@@ -1,12 +1,15 @@
 # DIRECTIONS
 
 Author: Ashour Dankha
+
 Class: CS251 Data Structures
+
 System: Windows
 
 This program will need t1RNG.c and rnames.txt to run correctly.
 
 This program creates rows and columns with names and generates a random float number.
+
 This program is a supplement to tcalc/tsort.c
 
 To use the program correctly, follow the instructions below:
